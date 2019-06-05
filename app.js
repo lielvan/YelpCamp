@@ -68,5 +68,5 @@ app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-// app.listen(port, console.log(`YelpCamp Server Started... Listening on localhost port ${port}`));
-app.listen(process.env.PORT, process.env.IP , console.log(`YelpCamp Server Started... Listening on localhost port ${process.env.PORT}`));
+app.listen(port, console.log(`YelpCamp Server Started... Listening on localhost port ${port}`));
+// app.listen(process.env.PORT, process.env.IP , console.log(`YelpCamp Server Started... Listening on localhost port ${process.env.PORT}`));

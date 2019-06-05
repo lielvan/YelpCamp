@@ -24,7 +24,8 @@ var campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index");
 
 // MongoDB Connection
-mongoose.connect("mongodb+srv://lvdh:lvdH1856@cluster0-15lep.mongodb.net/yelp_camp?retryWrites=true", {
+var url = process.env.DATABASE_URL || "mongodb+srv://lvdh:lvdH1856@cluster0-15lep.mongodb.net/yelp_camp_dev?retryWrites=true"
+mongoose.connect(url, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,

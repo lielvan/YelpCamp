@@ -24,7 +24,7 @@ var campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index");
 
 // MongoDB Connection
-var url = process.env.DATABASE_URL || "mongodb+srv://lvdh:lvdH1856@cluster0-15lep.mongodb.net/yelp_camp_dev?retryWrites=true"
+var url = process.env.DATABASE_URL
 mongoose.connect(url, {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -45,7 +45,7 @@ app.use(flash());
 
 // Passport Config
 app.use(require("express-session")({
-    secret: "Bolt",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false
 }));
@@ -69,5 +69,5 @@ app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-// app.listen(port, console.log(`YelpCamp Server Started... Listening on localhost port ${port}`));
-app.listen(process.env.PORT, process.env.IP , console.log(`YelpCamp Server Started... Listening on localhost port ${process.env.PORT}`));
+app.listen(port, console.log(`YelpCamp Server Started... Listening on localhost port ${port}`));
+// app.listen(process.env.PORT, process.env.IP , console.log(`YelpCamp Server Started... Listening on localhost port ${process.env.PORT}`));

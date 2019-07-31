@@ -1,3 +1,5 @@
+![Home Page](/screenshots/LandingPage.png)
+
 # YelpCamp
 
 A camping site review application that allows users to sign up and upload a campsite name/description/picture/location/etc.
